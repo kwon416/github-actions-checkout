@@ -8,11 +8,12 @@ jobs:
         with: # 액션에 입력 파라미터를 넘김
           # path: our-source
           fetch-depth: 3 # 최근 몇 개의 커밋을 불러올지. 기본값 1, 전체 이력 0
-          repository: actions/checkout
-          ref: v3
+          repository: actions/checkout # 체크 아웃 레포지토리에서 체크 아웃, 생략시 현재 저장소
+          ref: v3 # 브랜치명 또는 태그명
       # - run: ls -al
       # - run: ls -al our-source
       # - run: cat our-source/.github/workflows/checkout.yml
       # - run: cd our-source
       - run: ls -al
+      - run: cat ./action.yml
       - run: git log --pretty=oneline
